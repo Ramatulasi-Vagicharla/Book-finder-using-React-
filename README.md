@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Book Finder — for Alex
 
 A sleek React app to search books using the **Open Library** public API (no auth). Built with Vite and plain CSS.
@@ -54,3 +55,6 @@ book-finder-react/
 - **Extra:** debounce+abort, modal action buttons, keyboard pagination
 
 Enjoy! 📚
+=======
+# Book-finder-using-React-
+>>>>>>> bd8d72a42d718573c5415a32ab7ffe7b7461ebd1
