@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Finder — Alex</title>
+    <meta name="description" content="Find books fast using Open Library. Search by title, author, subject, or ISBN."/>
+    <link rel="icon" href="/favicon.svg">
+    <style>
+      :root { --bg: #0b1020; --card:#121a33; --muted:#9aa4c7; --brand:#7c9cff; --accent:#80eec0; }
+      * { box-sizing: border-box; }
+      html, body, #root { height: 100%; }
+      body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+             background: radial-gradient(1200px 800px at 80% -20%, rgba(124,156,255,.2), transparent 60%) , var(--bg);
+             color: #e9edff; }
+      a { color: var(--brand); }
+      .container { max-width: 1100px; margin: 0 auto; padding: 1rem; }
+      header { display:flex; align-items:center; gap:.8rem; padding: 1rem 0; }
+      header h1 { font-size: clamp(1.2rem, 3vw, 1.7rem); margin:0; }
+      header .tag { background: linear-gradient(135deg, var(--brand), var(--accent)); -webkit-background-clip:text; background-clip:text; color: transparent; font-weight: 700; }
+      .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+      .card { background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.06);
+              border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,.25); transition: transform .15s ease, border-color .2s ease; }
+      .card:hover { transform: translateY(-2px); border-color: rgba(124,156,255,.35); }
+      .cover { width:100%; aspect-ratio: 3/4; object-fit: cover; background: #0d132b; }
+      .content { padding: .8rem .9rem 1rem; }
+      .title { font-size: 1rem; font-weight: 700; line-height: 1.2; margin: 0 0 .35rem; }
+      .meta { font-size: .86rem; color: var(--muted); }
+      .toolbar { display:grid; gap:.6rem; grid-template-columns: 1fr; margin:.2rem 0 1rem; }
+      @media(min-width: 720px){ .toolbar { grid-template-columns: 1.2fr .9fr 1fr .7fr .7fr; align-items: end; } }
+      .field label{ font-size:.78rem; color:var(--muted); display:block; margin:0 0 .3rem; }
+      .field input, .field select { width: 100%; padding:.7rem .8rem; border-radius: 12px; border:1px solid rgba(255,255,255,.1);
+          background: rgba(10,15,30,.6); color:#e9edff; outline: none; }
+      .btn { padding:.8rem 1rem; border-radius: 12px; border: 1px solid rgba(255,255,255,.12);
+             background: linear-gradient(180deg, rgba(124,156,255,.25), rgba(124,156,255,.15)); color:#fff; cursor:pointer; }
+      .btn.secondary { background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03)); }
+      .controls { display:flex; gap:.5rem; }
+      .helper { color: var(--muted); font-size: .85rem; margin:.3rem 0 0; }
+      .footer { display:flex; justify-content: space-between; align-items:center; gap:.5rem; margin:1rem 0 2rem; }
+      .pagination { display:flex; gap:.4rem; flex-wrap: wrap; }
+      .pill { padding:.45rem .75rem; border-radius: 999px; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); cursor:pointer; }
+      .pill[aria-current="page"]{ background: rgba(124,156,255,.25); border-color: rgba(124,156,255,.5); }
+      dialog { border: none; border-radius: 16px; padding: 0; max-width: 900px; width: min(92vw, 900px); background: #0f1630; color: #e9edff; }
+      dialog::backdrop { background: rgba(4, 8, 20, .6); backdrop-filter: blur(4px); }
+      .modal-body { display:grid; grid-template-columns: 250px 1fr; gap: 1rem; padding: 1rem; }
+      @media (max-width: 640px){ .modal-body { grid-template-columns: 1fr; } }
+      .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: .72rem; padding:.16rem .4rem; background: rgba(255,255,255,.08); border-radius: 6px; border: 1px solid rgba(255,255,255,.1); }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
